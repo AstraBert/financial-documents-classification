@@ -1,0 +1,17 @@
+[project]
+name = "financial-documents-classification"
+version = "0.1.0"
+description = "A workflow-based system for classifying financial documents (PDFs) using LlamaCloud services"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "vibe-llama>=0.4.7.post1",
+]
+
+[tool.llamadeploy]
+name = "financial-classifier"
+llama_cloud = true
+env_files = [".env"]
+
+[tool.llamadeploy.workflows]
+classify = "financial_document_classification.workflow:workflow"
